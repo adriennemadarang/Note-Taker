@@ -1,5 +1,5 @@
 const router = require('express').Router();
-// const uuid = require('../helpers/uuid');
+const uuid = require('../helpers/uuid');
 const fs = require('fs');
 
 // GET request
