@@ -3,15 +3,12 @@ const path = require('path');
 const app = express();
 const fs = require ('fs');
 const PORT = process.env.PORT || 3001;
-const htmlRoutes = require ('./routes/htmlRoutes');
-const apiRoutes = require ('./routes/apiRoutes');
-
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static('public'));
-app.use('/', htmlRoutes);
-app.use('/api', apiRoutes);
+app.use(express.static(__dirname + 'public'));
+
+require('./routes/apiRoutes')(app);
 
 
 app.listen(PORT, () => {
