@@ -1,6 +1,5 @@
 const router = require('express').Router();
-const uuid = require('../helpers/uuid');
-const fs = require('fs');
+
 
 // GET request
 router.get('/api/notes', async(req, res) => {
