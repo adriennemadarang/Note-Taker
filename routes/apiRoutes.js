@@ -1,23 +1,24 @@
 const router = require('express').Router();
-
+const { v4: uuidv4 } = require('uuid');
+const fs = require('fs');
 
 // GET request
-router.get('/api/notes', async(req, res) => {
-    const notes = await JSON.parse(fs.readFileSync('db/db.json'))
-    res.json(note);
+router.get('/api/notes', async (req, res) => {
+    const dbJson = await JSON.parse(fs.readFileSync('db/db.json', 'utf8'))
+    res.json(dbJson);
 });
 
 // POST request
-router.post('/api/notes', (req,res) => {
-    const notes = JSON.parse(fs.readFileSync('db/db.json'))
+router.post('/api/notes', (req, res) => {
+    const dbJson = JSON.parse(fs.readFileSync('db/db.json'))
     const newNote = {
         title: req.body.title,
         text: req.body.text,
-        id: uuid()
+        id: uuid(v4)
     };
-    notes.push(newNote);
-    fs.writeFileSync('db/db.json', JSON.stringify(notes));
-    res.json(notes);
+    dbJson.push(newNote);
+    fs.writeFileSync('db/db.json', JSON.stringify(dbJson));
+    res.json(dbJson);
 });
 
 module.exports = router;
