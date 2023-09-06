@@ -23,11 +23,15 @@ WHEN I click on the Write icon in the navigation at the top of the page<br>
 THEN I am presented with empty fields to enter a new note title and the note’s text in the right-hand column<br>
 
 ## Installation
-Clone github repo and run: 'npm i' in terminal to install all the needed package. 
+Clone github repo and run: <br>
+```npm i``` 
+<br>
+in terminal to install all the needed package. 
 
 ## Usage 
-Once all the packages have been installed, open the terminal and the following code in the command line: 
-'node server.js' This will run the server on the local host. <br>
+Once all the packages have been installed, open the terminal and the following code in the command line: <br>
+```node server.js``` 
+<br>This will run the server on the local host. 
 
 ## Screenshot
 <img width="1436" alt="Screen Shot 2023-09-05 at 8 48 22 PM" src="https://github.com/adriennemadarang/Note-Taker/assets/128556908/1e6ca492-c4f1-48c3-a30e-77646afa9dab">
