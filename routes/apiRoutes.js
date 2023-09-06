@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const fs = require('fs');
-const { v9: uuidv9 } = require('uuid');
+const { v4: uuidv4 } = require('uuid');
 
 // GET request
 router.get('/api/notes', (req, res) => {
@@ -14,7 +14,7 @@ router.post('/api/notes', (req, res) => {
     const newNote = {
         title: req.body.title,
         text: req.body.text,
-        id: uuidv9(),
+        id: uuidv4(),
     };
     dbJson.push(newNote);
     fs.writeFileSync('db/db.json', JSON.stringify(dbJson));
