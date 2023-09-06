@@ -3,8 +3,8 @@ const fs = require('fs');
 const { v4: uuidv4 } = require('uuid');
 
 // GET request
-router.get('/api/notes', async (req, res) => {
-    const dbJson = await JSON.parse(fs.readFileSync('db/db.json', 'utf8'))
+router.get('/api/notes', (req, res) => {
+    const dbJson = JSON.parse(fs.readFileSync('db/db.json', 'utf8'))
     res.json(dbJson);
 });
 
